@@ -1,0 +1,77 @@
+.main-form{
+    background-color: antiquewhite;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+    display: inline-block;
+    width: 50%;
+    top:20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.txtName{
+    background-color: white;
+    border-radius: 5px;
+    font-size:20px;
+}
+.btnSubmit{
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    align-content: center;
+}
+.result-div{
+     background-color: lightsteelblue; 
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    
+
+}
+.result-div li{
+ list-style: none;
+  background-color: whitesmoke; 
+ font-size: 20px;
+ border-radius: 5px;
+ color:crimson ;
+ margin-top: 3px;
+ 
+}
+.result-div li button{
+    float:right;
+    text-decoration: none;
+    border: none;
+    position: static;
+    font-size: 20px;
+    margin-top: 2px;
+    background-color: whitesmoke;
+    color:lightblue;
+}
+.result-div li button:hover{
+    color: blue;
+}
+.result-div{
+    overflow: hidden;
+    height: auto;
+}
+.scroll{
+    overflow-y: scroll;
+    height: 300px;
+}
+.btn-Div{
+    width: 50%;
+
+}
+.btnClear{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    
+}

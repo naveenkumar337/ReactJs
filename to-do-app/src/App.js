@@ -5,7 +5,7 @@ import TODO from './Components/Todo'
 function App() {
   return (
     <div className="App">
-      <div>Welcome to todo app</div>
+      <div className="header-Text">Welcome to todo app</div>
       <TODO/>
     </div>
   );
