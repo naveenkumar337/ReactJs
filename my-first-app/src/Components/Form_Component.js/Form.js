@@ -50,6 +50,7 @@ this.setState({
                         <option value="react">React</option>
                         <option value="angular">Angular</option>
                         <option value="vue">Vue</option>
+                        <option value="vue">.Net</option>
                     </select>
                 </div>
                 <button type="submit" >Submit</button>
