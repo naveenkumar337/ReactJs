@@ -13,6 +13,7 @@ import LifeCycle from './Components/Life_Cycles/LifeCycle_Of_React_Mounting'
 import UpdateLifeCycle from './Components/Life_Cycles/LifeCycle_Of_Updating'
 import Fragment from './Components/Fragment'
 import PureComp from './Components/PureComponent'
+import Refs from './Components/RefsComp'
 function App() {
   return (
     <div className="App">
@@ -42,8 +43,11 @@ function App() {
 
 {/* FragMent Application 
 <Fragment/>*/}
-{/* Working With Pure Component */}
-<PureComp/>
+{/* Working With Pure Component 
+<PureComp/>*/}
+
+{/* Using Refs  */}
+<Refs ></Refs>
     </div>
   );
 }
