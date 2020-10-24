@@ -13,8 +13,6 @@ class RefsComp extends Component {
         if(this.cbRef){
 this.cbRef.focus();
         }
-        // this.refInput.current.focus();
-        // console.log(this.refInput);
     }
     handleClick=()=>{
         alert(this.refInput.current.value);

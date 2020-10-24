@@ -13,7 +13,9 @@ import LifeCycle from './Components/Life_Cycles/LifeCycle_Of_React_Mounting'
 import UpdateLifeCycle from './Components/Life_Cycles/LifeCycle_Of_Updating'
 import Fragment from './Components/Fragment'
 import PureComp from './Components/PureComponent'
-import Refs from './Components/RefsComp'
+import Refs from './Components/Refs/RefsComp'
+import ClassRef from './Components/Refs/ClassRefsComp'
+import FRRef from './Components/Refs/ForwordingRef'
 function App() {
   return (
     <div className="App">
@@ -46,8 +48,14 @@ function App() {
 {/* Working With Pure Component 
 <PureComp/>*/}
 
-{/* Using Refs  */}
-<Refs ></Refs>
+{/* Using Refs */}
+<h2>Basic Ref Concept</h2>
+<Refs>
+  </Refs> 
+  <h3>Refs With Class Component</h3>
+  <ClassRef/>
+  <h3>Forwording Ref</h3>
+  <FRRef/>
     </div>
   );
 }
