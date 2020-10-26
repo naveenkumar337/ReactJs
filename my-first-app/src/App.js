@@ -48,14 +48,14 @@ function App() {
 {/* Working With Pure Component 
 <PureComp/>*/}
 
-{/* Using Refs */}
+{/* Using Refs 
 <h2>Basic Ref Concept</h2>
 <Refs>
   </Refs> 
   <h3>Refs With Class Component</h3>
   <ClassRef/>
   <h3>Forwording Ref</h3>
-  <FRRef/>
+  <FRRef/>*/}
     </div>
   );
 }
