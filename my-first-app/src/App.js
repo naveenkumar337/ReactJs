@@ -8,7 +8,7 @@ import ParentComponent from './Components/Call-ParentComponent/Parent'
 import List from './Components/ListRendering'
 import ListExample  from './Components/Examples/ListRendering_Ex'
 import MyStyle from './Components/MyStyle'
-import Form from './Components/Form_Component.js/Form'
+import Form from './Components/Form_Component/Form'
 import LifeCycle from './Components/Life_Cycles/LifeCycle_Of_React_Mounting'
 import UpdateLifeCycle from './Components/Life_Cycles/LifeCycle_Of_Updating'
 import Fragment from './Components/Fragment'
@@ -16,6 +16,8 @@ import PureComp from './Components/PureComponent'
 import Refs from './Components/Refs/RefsComp'
 import ClassRef from './Components/Refs/ClassRefsComp'
 import FRRef from './Components/Refs/ForwordingRef'
+import {HeroName,HeroName2,ErrorBoundary} from './Components/ErrorBoundary'
+import FormEx from './Components/Form_Component/FormExample'
 function App() {
   return (
     <div className="App">
@@ -36,8 +38,12 @@ function App() {
 {/*Style Components
 <MyStyle name="primary"/>
 */}
-{/* Form Component 
-<Form/>*/}
+
+
+{/* Form Component
+<Form/> */}
+
+<FormEx/>
 {/* LifeCycle of Mounting
 <LifeCycle/>*/}
 {/* LifeCycle of Updating
@@ -56,6 +62,19 @@ function App() {
   <ClassRef/>
   <h3>Forwording Ref</h3>
   <FRRef/>*/}
+
+  {/* Error Boundary 
+  <ErrorBoundary>
+    <HeroName heroName="Alluri sitha ramaraju"/>
+  </ErrorBoundary>
+  <ErrorBoundary>
+  <HeroName heroName="Subhash Chandra Bose"/>
+  </ErrorBoundary>
+  <ErrorBoundary>
+    <HeroName heroName="Bhagath Singh" >
+    </HeroName>
+    <HeroName2 heroName="Jocker" />
+     </ErrorBoundary>*/}
     </div>
   );
 }
