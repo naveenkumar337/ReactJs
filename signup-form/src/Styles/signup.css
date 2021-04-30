@@ -1,0 +1,75 @@
+.form-tag{
+    /* background-color: lightblue; */
+    margin: auto;
+    width:100%;
+}
+.form-tag{
+    
+    margin-top:18px ;
+    margin-left: 10px;
+}
+span>div{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: darkgray;
+}
+span>div>input{
+    width: 90%;
+    height: 20px;
+    box-shadow: none;
+    text-shadow: none;
+    border:1px solid darkgray;
+}
+
+span>div>button{
+    
+    margin: auto;
+    width: 30%;
+    height: 25px;
+    background-color: green;
+    color:white;
+    border: none;
+    border-radius:5px ;
+    
+}
+.error{
+    display:none;
+    color:red;
+    font-weight:bold ;
+}
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
