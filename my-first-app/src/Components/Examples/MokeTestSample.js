@@ -103,7 +103,7 @@ class Producttable extends React.Component {
     this.props.products.forEach((prod) => {
       if (prod.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
         return;
-      } 
+      }
       if (inStockOnly && !prod.stocked) {
         debugger;
         return;
@@ -124,7 +124,17 @@ class Producttable extends React.Component {
                 <td>Price</td>
               </tr>
             </thead>
-    <tbody>{row.length>0?row:<tr><td style={{color:'red',textalign:'center'}}>NoData Found</td></tr>}</tbody>
+            <tbody>
+              {row.length > 0 ? (
+                row
+              ) : (
+                <tr>
+                  <td style={{ color: "red", textalign: "center" }}>
+                    NoData Found
+                  </td>
+                </tr>
+              )}
+            </tbody>
           </table>
         </div>
       </div>

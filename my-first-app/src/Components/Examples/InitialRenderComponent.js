@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class InitialRenderComponent extends Component {
   constructor(props) {
     super(props);
@@ -12,8 +11,8 @@ class InitialRenderComponent extends Component {
   }
   logProcess = (e) => {
     console.log("logProcess");
-    this.setState({X: e.clientX, Y : e.clientY});
-  }
+    this.setState({ X: e.clientX, Y: e.clientY });
+  };
   componentDidMount() {
     console.log("DidUpdate");
     window.addEventListener("mousemove", this.logProcess);

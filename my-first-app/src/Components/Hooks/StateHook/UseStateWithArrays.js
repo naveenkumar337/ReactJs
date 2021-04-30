@@ -10,7 +10,8 @@ function UseStateWithArrays() {
   };
   return (
     <div>
-      <button onClick={addItem}>Add Item</button> <button onClick={()=>setItems([])}>ReSet</button>
+      <button onClick={addItem}>Add Item</button>{" "}
+      <button onClick={() => setItems([])}>ReSet</button>
       <ul>
         {items.map((item) => (
           <li key={item.id}>{item.value}</li>

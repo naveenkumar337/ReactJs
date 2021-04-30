@@ -4,7 +4,7 @@ import PersonContext from "./UserContext";
 class ComponentF extends Component {
   render() {
     console.log(this.context);
-    const Valuecontext=this.context;
+    const Valuecontext = this.context;
     return (
       <div>
         {/* consuming the UserContext value in here */}
@@ -17,10 +17,9 @@ class ComponentF extends Component {
           {(color1) => {
             return (
               <div>
-              <button>
-                Name color
-              </button>
-            <p>{color1}</p></div>
+                <button>Name color</button>
+                <p>{color1}</p>
+              </div>
             );
           }}
         </PersonContext.Consumer>

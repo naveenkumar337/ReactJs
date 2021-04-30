@@ -1,23 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Wel from './Components/Function';
-import {welcome,ClassProps} from './Components/Class';
-import {WelcomeState,FState} from './Components/About-State'
-import ParentComponent from './Components/Call-ParentComponent/Parent'
-import List from './Components/ListRendering'
-import ListExample  from './Components/Examples/ListRendering_Ex'
-import MyStyle from './Components/MyStyle'
-import Form from './Components/Form_Component/Form'
-import LifeCycle from './Components/Life_Cycles/LifeCycle_Of_React_Mounting'
-import UpdateLifeCycle from './Components/Life_Cycles/LifeCycle_Of_Updating'
-import Fragment from './Components/Fragment'
-import PureComp from './Components/PureComponent'
-import Refs from './Components/Refs/RefsComp'
-import ClassRef from './Components/Refs/ClassRefsComp'
-import FRRef from './Components/Refs/ForwordingRef'
-import {HeroName,HeroName2,ErrorBoundary} from './Components/ErrorBoundary'
-import FormEx from './Components/Form_Component/FormExample'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Wel from "./Components/Function";
+import { welcome, ClassProps } from "./Components/Class";
+import { WelcomeState, FState } from "./Components/About-State";
+import ParentComponent from "./Components/Call-ParentComponent/Parent";
+import List from "./Components/ListRendering";
+import ListExample from "./Components/Examples/ListRendering_Ex";
+import MyStyle from "./Components/MyStyle";
+import Form from "./Components/Form_Component/Form";
+import LifeCycle from "./Components/Life_Cycles/LifeCycle_Of_React_Mounting";
+import UpdateLifeCycle from "./Components/Life_Cycles/LifeCycle_Of_Updating";
+import Fragment from "./Components/Fragment";
+import PureComp from "./Components/PureComponent";
+import Refs from "./Components/Refs/RefsComp";
+import ClassRef from "./Components/Refs/ClassRefsComp";
+import FRRef from "./Components/Refs/ForwordingRef";
+import { HeroName, HeroName2, ErrorBoundary } from "./Components/ErrorBoundary";
+import FormEx from "./Components/Form_Component/FormExample";
 function App() {
   var obj = {
     name: "whitesmoke",
@@ -53,22 +53,21 @@ function App() {
 <MyStyle name="primary"/>
 */}
 
-
-{/* Form Component
+      {/* Form Component
 <Form/> */}
 
-<FormEx/>
-{/* LifeCycle of Mounting
+      <FormEx />
+      {/* LifeCycle of Mounting
 <LifeCycle/>*/}
       {/* LifeCycle of Updating
 <UpdateLifeCycle/>*/}
 
       {/* FragMent Application 
 <Fragment/>*/}
-{/* Working With Pure Component 
+      {/* Working With Pure Component 
 <PureComp/>*/}
 
-{/* Using Refs 
+      {/* Using Refs 
 <h2>Basic Ref Concept</h2>
 <Refs>
   </Refs> 
@@ -77,7 +76,7 @@ function App() {
   <h3>Forwording Ref</h3>
   <FRRef/>*/}
 
-  {/* Error Boundary 
+      {/* Error Boundary 
   <ErrorBoundary>
     <HeroName heroName="Alluri sitha ramaraju"/>
   </ErrorBoundary>

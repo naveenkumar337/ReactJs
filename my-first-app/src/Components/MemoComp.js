@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
-function MemoComp({name}) {
-    console.log('Memocomp');
+function MemoComp({ name }) {
+  console.log("Memocomp");
 
-    return (
-        <div>
-            {name}
-        </div>
-    )
+  return <div>{name}</div>;
 }
 
-export default React.memo(MemoComp)
+export default React.memo(MemoComp);

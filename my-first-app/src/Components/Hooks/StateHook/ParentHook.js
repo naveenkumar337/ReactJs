@@ -22,7 +22,7 @@ function ParentHook() {
             </li>
           </ul>
         </nav>
-        
+
         <Switch>
           <Route path="/use-effect">
             <fieldset
@@ -34,9 +34,9 @@ function ParentHook() {
             >
               <legend style={{ width: "inherit" }}>UseEffect Hook</legend>
               <UseEffectHook />
-              <ConditionalHook/>
-        <p>Initial Render Block</p>
-              <InitialRenderHook/>
+              <ConditionalHook />
+              <p>Initial Render Block</p>
+              <InitialRenderHook />
             </fieldset>
           </Route>
           <Route path="/">
