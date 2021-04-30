@@ -12,7 +12,7 @@
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,9 +38,7 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
+  "devDependencies": {},
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "prettier": "^2.2.1"
-  }
+  "license": "ISC"
 }
