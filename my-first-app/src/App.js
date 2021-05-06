@@ -18,21 +18,9 @@ import ClassRef from "./Components/Refs/ClassRefsComp";
 import FRRef from "./Components/Refs/ForwordingRef";
 import { HeroName, HeroName2, ErrorBoundary } from "./Components/ErrorBoundary";
 import FormEx from "./Components/Form_Component/FormExample";
+import ParentHook from './Components/Hooks/ParentHook'
 function App() {
-  var obj = {
-    name: "whitesmoke",
-    size: 22,
-  };
-
-  useEffect(() => {
-    console.log("Did Mount");
-
-    // returned function will be called on component unmount
-    return () => {
-      console.log("Will Unmount OR On destroy");
-    };
-  }, []);
-
+  
   return (
     <div className="App">
       {/* <Wel/>
@@ -56,7 +44,7 @@ function App() {
       {/* Form Component
 <Form/> */}
 
-      <FormEx />
+      {/* <FormEx /> */}
       {/* LifeCycle of Mounting
 <LifeCycle/>*/}
       {/* LifeCycle of Updating
@@ -88,7 +76,9 @@ function App() {
     </HeroName>
     <HeroName2 heroName="Jocker" />
      </ErrorBoundary>*/}
+     <ParentHook/>
     </div>
+
   );
 }
 

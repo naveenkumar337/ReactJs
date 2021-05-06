@@ -1,12 +1,14 @@
 import React from "react";
-import UseEffectHook from "../UseEffect/UseEffectHook";
-import UseStateWithArrays from "./UseStateWithArrays";
-import CounterHook from "./UseStateWithCounterHook";
-import StateHookWithObject from "./UseStateWithObject";
-import UsingPrevState from "./UseStateWithPrevState";
+import UseEffectHook from "./UseEffect/UseEffectHook";
+import UseStateWithArrays from "./StateHook/UseStateWithArrays";
+import CounterHook from "./StateHook/UseStateWithCounterHook";
+import StateHookWithObject from "./StateHook/UseStateWithObject";
+import UsingPrevState from "./StateHook/UseStateWithPrevState";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ConditionalHook from "../UseEffect/ConditionalHook";
-import InitialRenderHook from "../UseEffect/InitialRenderHook";
+import ConditionalHook from "./UseEffect/ConditionalHook";
+import InitialRenderHook from "./UseEffect/InitialRenderHook";
+import CleanUp from "./UseEffect/CleanUp"
+import {FetchData,FetchingDataWithID} from "./UseEffect/FetchData";
 function ParentHook() {
   return (
     <Router>
@@ -37,6 +39,13 @@ function ParentHook() {
               <ConditionalHook />
               <p>Initial Render Block</p>
               <InitialRenderHook />
+              <p>Cleanup Hook</p>
+              <CleanUp/>
+              <p>Calling api using useEffect</p>
+              <p><b>the result is:</b></p>
+              <FetchData/>
+              <p>call api by sending the ID</p>
+              <FetchingDataWithID/>
             </fieldset>
           </Route>
           <Route path="/">
