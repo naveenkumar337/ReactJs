@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import UseEffectHook from "./UseEffect/UseEffectHook";
 import UseStateWithArrays from "./StateHook/UseStateWithArrays";
 import CounterHook from "./StateHook/UseStateWithCounterHook";
@@ -7,8 +7,9 @@ import UsingPrevState from "./StateHook/UseStateWithPrevState";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ConditionalHook from "./UseEffect/ConditionalHook";
 import InitialRenderHook from "./UseEffect/InitialRenderHook";
-import CleanUp from "./UseEffect/CleanUp"
-import {FetchData,FetchingDataWithID} from "./UseEffect/FetchData";
+import CleanUp from "./UseEffect/CleanUp";
+import { FetchData, FetchingDataWithID } from "./UseEffect/FetchData";
+import UseContextHook from "./UseContext/UseContextHook";
 function ParentHook() {
   return (
     <Router>
@@ -18,6 +19,9 @@ function ParentHook() {
           <ul style={{}}>
             <li>
               <Link to="/">UseState</Link>
+            </li>
+            <li>
+              <Link to="/use-context">UseContext</Link>
             </li>
             <li>
               <Link to="/use-effect">UseEffect</Link>
@@ -40,12 +44,26 @@ function ParentHook() {
               <p>Initial Render Block</p>
               <InitialRenderHook />
               <p>Cleanup Hook</p>
-              <CleanUp/>
+              <CleanUp />
               <p>Calling api using useEffect</p>
-              <p><b>the result is:</b></p>
-              <FetchData/>
+              <p>
+                <b>the result is:</b>
+              </p>
+              <FetchData />
               <p>call api by sending the ID</p>
-              <FetchingDataWithID/>
+              <FetchingDataWithID />
+            </fieldset>
+          </Route>
+          <Route path="/use-context">
+            <fieldset
+              style={{
+                border: "2px dotted blue",
+                margin: "auto",
+                padding: "20px",
+              }}
+            >
+              <legend style={{ width: "inherit" }}>Use Context Hook</legend>
+              <UseContextHook />
             </fieldset>
           </Route>
           <Route path="/">
