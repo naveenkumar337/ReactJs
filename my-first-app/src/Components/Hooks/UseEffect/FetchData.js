@@ -18,11 +18,24 @@ function FetchData() {
   }, []);
   return (
     <div>
-      <ul>
+      {/* <ul> */}
+      <table class="table text-center table-striped table-hover">
+         
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+
         {posts.slice(0, 5).map((post, index) => (
-          <li key={post.id}>{post.title}</li>
+          <tr>
+          <td>{post.id}</td>
+          <td>{post.title}</td>
+          <td>{post.body}</td>
+        </tr>
         ))}
-      </ul>
+        </table>
+      {/* </ul> */}
     </div>
   );
 }
@@ -45,6 +58,11 @@ function FetchingDataWithID() {
     <div>
       <input type="text" value={ID} onChange={(e) => setID(e.target.value)} />
       <p> {posts.title}</p>
+      <div class="row border-2 light-gray bg-lime">
+        <p class="col-mg-4 col-lg-1 col-sm-1">{posts.id}</p>
+        <p class="col-mg-4 col-lg-5 col-sm-5">{posts.title}</p>
+        <p class="col-mg-4 col-lg-6 col-sm-6">{posts.body}</p>       
+      </div>
     </div>
   );
 }

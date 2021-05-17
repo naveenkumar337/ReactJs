@@ -19,10 +19,12 @@ import FRRef from "./Components/Refs/ForwordingRef";
 import { HeroName, HeroName2, ErrorBoundary } from "./Components/ErrorBoundary";
 import FormEx from "./Components/Form_Component/FormExample";
 import ParentHook from './Components/Hooks/ParentHook'
+import HttpGet from './Components/axios-HTTP/httpGet'
 function App() {
   
   return (
     <div className="App">
+          <HttpGet/>
       {/* <Wel/>
       <welcome/>
       <ClassProps name="max" age="25"/>
@@ -76,7 +78,7 @@ function App() {
     </HeroName>
     <HeroName2 heroName="Jocker" />
      </ErrorBoundary>*/}
-     <ParentHook/>
+     {/* <ParentHook/> */}
     </div>
 
   );

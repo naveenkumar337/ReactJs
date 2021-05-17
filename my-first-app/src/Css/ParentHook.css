@@ -1,0 +1,11 @@
+.conatiner{
+    position: fixed !important;
+}
+.conatiner-2{
+    margin: auto !important;
+max-height: 400px !important;
+    overflow-y: auto;
+}
+legend{
+    width: inherit  !important;
+}

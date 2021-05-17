@@ -1,0 +1,22 @@
+    .card{
+        margin: auto;
+        max-height: auto;
+        margin-bottom: 20px !important ;
+        border-radius: 25px;
+    }   
+    .container{
+        max-width:50% !important;   
+    }
+    .title{
+        font-family: sans-serif;
+        font-style: oblique;
+        font-weight: bold;
+        margin: auto;
+    }
+     p{
+         max-width: 50px;
+         margin: auto;
+        
+        border: 2px solid black;
+        border-radius: 7px;
+    }
