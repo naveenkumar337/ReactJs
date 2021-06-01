@@ -20,11 +20,14 @@ import { HeroName, HeroName2, ErrorBoundary } from "./Components/ErrorBoundary";
 import FormEx from "./Components/Form_Component/FormExample";
 import ParentHook from './Components/Hooks/ParentHook'
 import HttpGet from './Components/axios-HTTP/httpGet'
+import LoginForm from "./Components/Form_Component/LoginForm";
+
 function App() {
   
   return (
     <div className="App">
-          <HttpGet/>
+          <LoginForm/>
+          {/* <HttpGet/> */}
       {/* <Wel/>
       <welcome/>
       <ClassProps name="max" age="25"/>
