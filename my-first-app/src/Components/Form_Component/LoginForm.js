@@ -31,7 +31,6 @@ class MainLoginForm extends Component {
         }
       })
       .then((XHRRes) => {
-        alert("success");
         console.log(XHRRes.data);
         this.setState({
           isLogin:true
@@ -39,7 +38,6 @@ class MainLoginForm extends Component {
         createHashHistory.push('/dashboard')
       })
       .catch((XHRErr) => {
-        alert("Failed");
         console.log(XHRErr);
       });
   };
