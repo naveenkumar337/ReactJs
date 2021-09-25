@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import { IoMdAdd } from 'react-icons/io';
+import { MdDelete } from 'react-icons/md';
 
 export default function Vehicle({props}) {
     const [pass, setPass] = useState(props.passanger)
@@ -13,7 +15,7 @@ export default function Vehicle({props}) {
                         <div className="card-header mb-0 pb-0 d-flex justify-content-between">
                             <p className="text-start">Unit {props.unit+1}</p>
                             <div className="">                             
-                                <button className="ms-3 btn btn-sm btn-secondary" onClick={(e)=>setPass(pass+1)} >Add Pass</button>
+                                <button className="ms-3 btn btn-sm btn-secondary" onClick={(e)=>setPass(pass+1)} ><IoMdAdd style={{fontSize:"large",color:"white",marginBottom:"1px"}} /> Add Pass</button>
                             </div>
                         </div>
                         <div className="card-body  mb-0 pb-0">
@@ -39,7 +41,7 @@ export default function Vehicle({props}) {
                                     <div className="form row">
                                         <div className="col-md-5"><span>RowLetter</span></div>
                                         <div className="col-md-5"><input type="text" name="" id="" className="form-control form-control-sm"/></div>
-                                        <div className="col"><button className="btn btn-sm btn-light">X</button></div>
+                                        <div className="col"><button className="btn btn-sm btn-danger"><MdDelete style={{fontSize:"large"}}/></button></div>
                                     </div>
                                 </fieldset>
                             </div>
@@ -61,7 +63,7 @@ function Passanger_Component({num,onclick_Handle}){
                                     <div className="form row">
                                         <div className="col-md-5"><span>RowLetter</span></div>
                                         <div className="col-md-5"><input type="text" name="" id="" className="form-control form-control-sm"/></div>
-                                        <div className="col"><button className="btn btn-sm btn-light" onClick={onclick_Handle}>X</button></div>
+                                        <div className="col"><button className="btn btn-sm btn-danger" onClick={onclick_Handle}><MdDelete style={{fontSize:"large"}}/></button></div>
                                     </div>
         </fieldset>
     </div>

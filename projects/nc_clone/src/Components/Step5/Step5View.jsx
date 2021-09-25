@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FasIcons } from "../CommonComponents/Icons";
+import { FasIcons, IoMdArrowBack } from "../CommonComponents/Icons";
 import PdfPage from "../CommonComponents/PdfPage";
 
 export default function Step5View() {
@@ -13,7 +13,7 @@ export default function Step5View() {
         <div className="col-md-6 border right-block">
           <div className="border p-auto alert m-0 p-2 alert-success">
               Vehicle 1 TruckBus Info
-            <Link to="/dashboard" className="btn btn-sm btn-secondary float-end">GoBack</Link>
+            <Link to="/dashboard" className="btn btn-sm btn-secondary float-end"><IoMdArrowBack className="mb-1 text-white" style={{fontSize:"Large"}} />GoBack</Link>
           </div>
           <form>
             <div className="row">

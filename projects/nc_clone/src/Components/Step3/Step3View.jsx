@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FasIcons } from "../CommonComponents/Icons";
+import { FasIcons, IoMdArrowBack } from "../CommonComponents/Icons";
 import PdfPage from "../CommonComponents/PdfPage";
 
 function Step3View() {
@@ -15,6 +15,7 @@ function Step3View() {
             <div className="card-header m-o p-1 d-flex justify-content-between">
               <span>Unit #</span>
               <Link to="/dashboard" className="btn btn-sm btn-secondary">
+              <IoMdArrowBack className="mb-1 text-white" style={{fontSize:"Large"}} />
                 GoBack
               </Link>
             </div>

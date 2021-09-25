@@ -1,7 +1,9 @@
 import * as FisIcons from 'react-icons/fi'
 import * as FasIcons from  'react-icons/fa'
 import {VscGraph} from 'react-icons/vsc'
+import {GrAdd} from 'react-icons/gr'
 import * as BasIcons from 'react-icons/bs'
-import {IoMdArrowBack} from 'react-icons/io'
+import {IoMdArrowBack,IoMdAdd} from 'react-icons/io'
+import {MdDelete} from 'react-icons/md'
 
-export {FisIcons,FasIcons,VscGraph,BasIcons,IoMdArrowBack};
+export {FisIcons,FasIcons,VscGraph,BasIcons,IoMdArrowBack,GrAdd,MdDelete,IoMdAdd};

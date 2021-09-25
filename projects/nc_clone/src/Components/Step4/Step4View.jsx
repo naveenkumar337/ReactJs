@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-import { FasIcons } from '../CommonComponents/Icons'
+import { FasIcons, IoMdArrowBack } from '../CommonComponents/Icons'
 import PdfPage from '../CommonComponents/PdfPage'
 
 export default function Step4View() {
@@ -15,7 +15,7 @@ export default function Step4View() {
                         <span className="col float-left flex-wrap">Driver N in Vehicle1</span>
                         <div className=" col d-flex justify-content-end">
                             <span>ROwLetter= N</span>
-                            <Link to="/dashboard" className="btn btn-secondary ms-3 btn-sm float-end">GoBack</Link>
+                            <Link to="/dashboard" className="btn btn-secondary ms-3 btn-sm float-end"><IoMdArrowBack className="mb-1 text-white" style={{fontSize:"Large"}} />GoBack</Link>
                         </div>
                     </div>
                     <div className="row">

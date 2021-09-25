@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import At_Int_and_Not_At_Int from '../CommonComponents/At_Int_and_Not_At_Int'
-import { FasIcons, IoMdArrowBack } from "../CommonComponents/Icons";
+import { FasIcons, IoMdArrowBack, MdDelete } from "../CommonComponents/Icons";
 import PdfPage from "../CommonComponents/PdfPage";
 
 function Step0View() {
@@ -22,8 +22,8 @@ function Step0View() {
                         <span className="">CaseNumber: Case-1</span>
                         </div>
                         <div className="col-md-6">                          
-                          <Link to="/step1list" className="btn btn-secondary btn-sm float-end mt-2"><IoMdArrowBack className="mb-1" />Go Back</Link>                       
-                          <button type="button" className="btn btn-danger btn-sm float-end mt-2 me-3">Delete File</button>
+                          <Link to="/step1list" className="btn btn-secondary btn-sm float-end mt-2"><IoMdArrowBack style={{fontSize:"Large"}} className="mb-1 text-white" />Go Back</Link>                       
+                          <button type="button" className="btn btn-danger btn-sm float-end mt-2 me-3"><MdDelete className="mb-1" style={{fontSize:"Large"}}/> Delete File</button>
                         </div>
                     </div>
                 </div>

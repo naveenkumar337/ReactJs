@@ -34,22 +34,22 @@ function SideBar(){
                 <div className="w-auto text-center m-2 text-white"><span className="">Welcome</span></div>
                
                 <ul className="w-auto list-group">
-                <li className="w-auto list-group-item border-0"><Link className="" to="/dashboard"><strong><BasIcons.BsGraphUp style={{color:"white",fontWeight:'bold'}}/></strong> DashBoard <span className="badge rounded-circle bg-secondary"><strong><FisIcons.FiRefreshCcw className=""/></strong></span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step1list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step1 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step2list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step2 <span className="badge rounded-circle  bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step3list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step3 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step4list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step4 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step5list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step5 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/step6list"><BasIcons.BsReverseLayoutTextWindowReverse/> Step6 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/flagcases"><FasIcons.FaFlag/> Flagged Cases <span className="badge rounded-circle bg-secondary">0</span></Link></li>
-                    <li className="w-auto list-group-item border-0"><Link className="" to="/reports"><VscGraph/> Reports </Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/dashboard"><strong><BasIcons.BsGraphUp style={{color:"white",fontWeight:'bold'}}/></strong> DashBoard <span className="badge rounded-circle bg-secondary"><strong><FisIcons.FiRefreshCcw className=""/></strong></span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step1list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step1 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step2list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step2 <span className="badge rounded-circle  bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step3list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step3 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step4list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step4 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step5list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step5 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/step6list"><BasIcons.BsReverseLayoutTextWindowReverse style={{color:"white",fontWeight:'bold'}}/> Step6 <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/flagcases"><FasIcons.FaFlag/> Flagged Cases <span className="badge rounded-circle bg-secondary">0</span></Link></li>
+                    <li className="w-auto list-group-item border-0"><Link className="text-decoration-none text-white" to="/reports"><VscGraph/> Reports </Link></li>
                 </ul>
               
             </div>       
        <div className="col ps-0 mt-0">
            <div className="navbar d-flex justify-content-between pt-0 p-2 navbar-light bg-light">
            <a className="navbar-brand cursor-pointer font-weight-bold" onClick={()=>setToggle(!toggle)}><span><FasIcons.FaBars></FasIcons.FaBars></span> </a>  
-           <button type="button" className="btn cursor-pointer text-white btn-secondary btn-sm">GoBack</button>         
+           <button type="button" className="btn btn-link cursor-pointer text-secondary text-decoration-none font-weight-bold">Logout <FisIcons.FiLogOut style={{fontSize:"larger"}}/></button>         
            </div>
            <div className="bg-secondary w-100 ps-0 border d-flex align-items-center">
            <nav aria-label="breadcrumb">

@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FasIcons, IoMdArrowBack } from '../CommonComponents/Icons'
+import { FasIcons, IoMdArrowBack, IoMdAdd } from '../CommonComponents/Icons'
 import PdfPage from '../CommonComponents/PdfPage'
 import Vehicle from '../CommonComponents/Vehicle'
 
@@ -27,14 +27,14 @@ export default function Step2View() {
                                 </div>
                             </div>
                             <div className="d-inline-block">
-                                <button type="button" className="btn btn-sm btn-secondary">Flag</button>
-                                <Link to="/dashboard" className="btn  ms-3 btn-sm btn-secondary"><IoMdArrowBack className="mb-1" />GoBack</Link>
-                                <button type="button" className="btn ms-3 btn-sm btn-secondary" onClick={()=>setVeh(veh+1)}>Add Box</button>
+                                <Link type="button" className="btn btn-sm btn-secondary"><FasIcons.FaFlag className="mb-1"/> Flag</Link>
+                                <Link to="/dashboard" className="btn  ms-3 btn-sm btn-secondary"><IoMdArrowBack className="mb-1 text-white" style={{fontSize:"Large"}} />GoBack</Link>
+                                <button type="button" className="btn ms-3 btn-sm btn-secondary" onClick={()=>setVeh(veh+1)}><IoMdAdd style={{fontSize:"large",color:"white",marginBottom:"2px"}} /> Add Box</button>
                             </div>
                         </div>
                         <hr/>
                         {vehicles.map(e=> <Vehicle props={{unit:e,passanger:0}}/>)}                   
-                        <button type="submit" className="btn btn-sm btn-success mt-3 mx-3 float-end"><FasIcons.FaRegSave className="mb-1"/>Save</button>
+                        <button type="submit" className="btn btn-sm btn-success mt-3 mx-3 float-end"><FasIcons.FaRegSave className="mb-1"/> Save</button>
                     </div>               
                 </div>
             </div>

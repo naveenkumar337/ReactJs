@@ -19,7 +19,7 @@ function Step1View() {
                   className="float-end btn btn-secondary btn-sm "
                   to="/dashboard"
                 >
-                  <IoMdArrowBack className="mb-1" />GoBack
+                  <IoMdArrowBack style={{fontSize:"Large"}} className="mb-1 text-white" />GoBack
                 </Link>
               </div>
               <div className="card-body">
@@ -71,7 +71,7 @@ function Step1View() {
                   </div>
                 </div>
                 
-                  <button type="submit" className="btn btn-sm btn-success mt-2 float-end mb-0 text-center"><FasIcons.FaRegSave className="mb-1"/> Save</button>
+                  <button type="submit" className="btn btn-sm btn-success mt-2 float-end mb-0 text-center"><FasIcons.FaRegSave  className="mb-1"/> Save</button>
                
                 </form>
               </div>
