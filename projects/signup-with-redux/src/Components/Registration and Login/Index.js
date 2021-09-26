@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import history from "./History";
 // import {use  as history} from 'react-redux'
 import Dashboard from "./DashBoard/Dashboard";
 import Login from "./Login/LoginForm";
@@ -13,19 +13,14 @@ import Registration from "./Registration/RegisterForm";
 import { connect } from "react-redux";
 import {userActions} from './_Actions'
 import Alert from "./DashBoard/Alert";
-
-export default class Index extends Component {
-  constructor(props) {
-    super(props);
-  }
-
- 
-  render() { debugger;
-    var history = createBrowserHistory();
+import ErrorBoundary from "../ErrorBoundary";
+export default class Index extends Component { 
+  render() {
     var alertMessage = this.props.alert;
     if (!alertMessage) {
       return (
         <div>
+          {/* <ErrorBoundary> */}
           <Alert/>
           <Router history={history}>
             <Switch>
@@ -35,6 +30,7 @@ export default class Index extends Component {
               <Redirect from="*" to="/dashboard" />
             </Switch>
           </Router>
+          {/* </ErrorBoundary> */}
         </div>
       );
     }

@@ -1,6 +1,6 @@
 import { userContraints, alertContraints } from "./_Contrains";
 import services from "./_ApiServices";
-import { createBrowserHistory } from "history";
+import history from "./History";
 
 export const userActions = {
   register,
@@ -11,19 +11,18 @@ export const userActions = {
   updateUser,
   deleteUser,
 };
-const history = createBrowserHistory();
-
 function register(user) {
   return (dispatch) => {
     dispatch(request(user));
     services.register(user).then(
-      (res) => {debugger
-        if (res !== undefined) {
-          if (res.response.Code === 1) {
-            dispatch(sucess(res));         
-            dispatch(RegisterAction(res,"login"));
-          }else{
-        dispatch(alertAction(res));
+      (res) => {
+        if (res) {
+          if (res.response && res.response.Code > 0) {
+            dispatch(sucess(res));
+            dispatch(RegisterAction(res, "login"));
+          } else {
+            dispatch(failure(res));
+            dispatch(alertAction(res));
           }
         }
       },
@@ -45,20 +44,19 @@ function register(user) {
       ...response,
     };
   }
-  function failure(error) {
+  function failure(response) {
     return {
       type: userContraints.REGISTER_FAILED,
-      error,
+      ...response,
     };
   }
 }
-
 function login(username, password) {
   return (dispatch) => {
     dispatch(request(username));
     services.login(username, password).then(
       (res) => {
-        if (res.response.Code === 1) {
+        if (res.response && res.response.Code > 0) {
           localStorage.setItem(
             "authUser",
             JSON.stringify({
@@ -67,11 +65,11 @@ function login(username, password) {
               password: password,
             })
           );
-          dispatch(RegisterAction(res,"dashboard"));
-          // dispatch(alertAction(res));
-          }else{
-            dispatch(alertAction(res));
-          }
+          dispatch(RegisterAction(res, "dashboard"));
+        } else {
+          dispatch(failure(res));
+          dispatch(alertAction(res));
+        }
       },
       (err) => {
         dispatch(alertAction(err));
@@ -91,29 +89,29 @@ function login(username, password) {
       ...res,
     };
   }
-  function error(res) {
+  function failure(res) {
     return {
       type: userContraints.LOGIN_FAILED,
-      res,
+      ...res,
     };
   }
 }
-function RegisterAction(message, routeName, timeout = 2000 ) {
+function RegisterAction(message, routeName, timeout = 2000) {
   debugger;
   return (dispatch) => {
     dispatch(alertsucess(message));
     setTimeout(() => {
-      history.push("/"+routeName);
-     // window.location.reload(true);
+      dispatch(alertClear(message));
+      history.push("/" + routeName);
     }, timeout);
   };
 }
-function alertAction(message, timeout = 4000 ) {
+function alertAction(message, timeout = 3000) {
   debugger;
   return (dispatch) => {
     dispatch(alertsucess(message));
     setTimeout(() => {
-    dispatch(alertClear(message));
+      dispatch(alertClear(message));
     }, timeout);
   };
 }
@@ -123,13 +121,12 @@ function alertClear(res) {
     response: { type: "success", ...res },
   };
 }
-
 function alertsucess(res) {
   return {
-    type: alertContraints.SUCESS, ...res ,
+    type: alertContraints.SUCESS,
+    ...res,
   };
 }
-
 function getUsers() {
   return (dispatch) => {
     dispatch(request);
@@ -137,7 +134,7 @@ function getUsers() {
       .getall()
       .then((res) => {
         dispatch(sucess(res));
-        dispatch(alertAction(res))
+        dispatch(alertAction(res));
       })
       .catch((err) => {
         dispatch(failed(err));
@@ -153,7 +150,6 @@ function getUsers() {
     return { type: userContraints.GET_FAILED, error };
   }
 }
-
 function deleteUser(email) {
   return (dispatch) => {
     dispatch(request);
@@ -163,7 +159,7 @@ function deleteUser(email) {
         dispatch(success(res));
       })
       .catch((err) => {
-        dispatch(failed(err));
+        dispatch(failure(err));
       });
   };
   function request() {
@@ -172,26 +168,24 @@ function deleteUser(email) {
   function success(response) {
     return {
       type: userContraints.DELETE_SUCCESS,
-      ...response
+      ...response,
     };
   }
-  function failed(err) {
+  function failure(err) {
     return { type: userContraints.DELETE_FAILED, error: err };
   }
 }
-
 function updateUser(user) {
   return (dispatch) => {
     dispatch(request(user));
     services
       .update(user)
       .then((res) => {
-        console.log(res)
         dispatch(success(res));
-        dispatch(alertAction(res))
+        dispatch(alertAction(res));
       })
       .catch((err) => {
-        dispatch(failed(err));
+        dispatch(failure(err));
       });
   };
 
@@ -203,11 +197,10 @@ function updateUser(user) {
     return { type: userContraints.UPDATE_SUCCESS, ...res };
   }
 
-  function failed(err) {
+  function failure(err) {
     return { type: userContraints.UPDATE_FAILED, err };
   }
 }
-
 function logout() {
   services.logout();
   return { type: userContraints.LOGOUT };

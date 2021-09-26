@@ -1,5 +1,6 @@
 // import { axios } from "axios";
-import { createBrowserHistory } from "history";
+import history from "./History";
+import {url} from '../Connection/ApiLink'
 import axios from "axios";
 const services = {
   login,
@@ -9,12 +10,11 @@ const services = {
   update,
   delete: _delete,
 };
-const history = createBrowserHistory();
 
 function login(username, password) {
   return axios
     .get(
-      `http://localhost:44323/api/User?userName=${username}&passWord=${password}`
+      `${url}?userName=${username}&passWord=${password}`
     )
     .then((res) => {
       return res.data;
@@ -24,7 +24,8 @@ function login(username, password) {
     });
 }
 
-function register(user) {
+function register(user) {debugger;
+  console.log(url)
   var objUser = {
     FirstName: user.firstname,
     LastName: user.lastname,
@@ -34,7 +35,7 @@ function register(user) {
     DateOfBirth: user.DateOfBirth,
   };
   return axios
-    .post("http://localhost:44323/api/User/", objUser)
+    .post(`${url}`, objUser)
     .then((res) => {
       return res.data;
     })
@@ -43,17 +44,14 @@ function register(user) {
     });
 }
 function logout() {
-  // const history = useHistory()
-
   localStorage.setItem("authUser", {});
   history.push("/login");
-  window.location.reload(true);
 }
 function getall() {
   var user = JSON.parse(localStorage.getItem("authUser"));
   var tocken = new Buffer(user.username + ":" + user.password);
   return axios
-    .get("http://localhost:44323/api/User", {
+    .get(`${url}`, {
       headers: {
         Authorization: `Basic ${tocken.toString("base64")}`,
       },
@@ -69,7 +67,7 @@ function _delete(email) {
   var user = JSON.parse(localStorage.getItem("authUser"));
   var tocken = new Buffer(user.username + ":" + user.password);
   return axios
-    .delete(`http://localhost:44323/api/User/?Email=${email}`, {
+    .delete(`${url}?Email=${email}`, {
       headers: {
         Authorization: `Basic ${tocken.toString("base64")}`,
       },
@@ -86,7 +84,7 @@ function update(userData) {
   var user = JSON.parse(localStorage.getItem("authUser"));
   var tocken = new Buffer(user.username + ":" + user.password);
   return axios
-    .put("http://localhost:44323/api/User", userData, {
+    .put(`${url}`, userData, {
       headers: {
         Authorization: `Basic ${tocken.toString("base64")}`,
       },

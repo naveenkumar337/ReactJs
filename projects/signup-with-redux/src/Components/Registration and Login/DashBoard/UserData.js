@@ -1,69 +1,73 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux'
-import {userActions} from '../_Actions'
+import { connect } from "react-redux";
+import { userActions } from "../_Actions";
 export default class UserData extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isedit: false,
       user: "",
-      users:{
+      users: {
         FirstName: "",
         LastName: "",
         Email: "",
         MobileNumber: "",
         Password: "",
-        DateOfBirth:""
-      }
+        DateOfBirth: "",
+      },
     };
   }
   onEditClickHandler = (ev) => {
-    var email=ev?ev.target.getAttribute("data-key"):''
+    var email = ev ? ev.target.getAttribute("data-key") : "";
     this.setState({
       isedit: !this.state.isedit,
       user: email,
-      users:this.props.props.find((item,i)=>{return item.Email===email})
+      users: this.props.props.find((item, i) => {
+        return item.Email === email;
+      }),
     });
   };
-  on_EditChange_Handler=(eve)=>{
+  on_EditChange_Handler = (eve) => {
     var { name, value } = eve.target;
 
     this.setState({
-      users:{
-      ...this.state.users,
-      Email: this.state.user,
-      [name]: value,
-    }
-  });
-  }
-on_EditSave_Handler=(eve)=>{
-this.setState({
-  ...this.state,
-  isedit:false
-});
-this.props.onUpdateHandler(this.state.users);
-}
+      users: {
+        ...this.state.users,
+        Email: this.state.user,
+        [name]: value,
+      },
+    });
+  };
+  on_EditSave_Handler = (eve) => {
+    this.setState({
+      ...this.state,
+      isedit: false,
+    });
+    this.props.onUpdateHandler(this.state.users);
+  };
   render() {
     var users = this.props.props;
-    console.log("user data merge"); 
-    console.log(this.props);
-    console.log(this.props.props);
-    if (users && (typeof users!=="function") && users.length > 0) {
+    if (users && typeof users !== "function" && users.length > 0) {
       return (
         <>
-          {users.map((user,i) => (
+          {users.map((user, i) => (
             <div className="card col-lg-4 shadow-lg ml-1 mt-1" key={i}>
               <div className="card-body">
                 <div className="d-flex flex-row justify-content-between">
                   <div className="">
                     <img
                       className={`img rounded-1 img-responsive shadow-lg img-thumbnail`}
-                      src='../../../Components/logo192.png'
+                      src="../../../Components/logo192.png"
                       alt="   "
                     />
-                    <span>{ user.FirstName.substr(0,1).toUpperCase()+user.FirstName.substr(1).toLowerCase() +" "+ user.LastName.substr(0,1).toUpperCase()+user.LastName.substr(1).toLowerCase()}</span>
+                    <span>
+                      {user.FirstName.substr(0, 1).toUpperCase() +
+                        user.FirstName.substr(1).toLowerCase() +
+                        " " +
+                        user.LastName.substr(0, 1).toUpperCase() +
+                        user.LastName.substr(1).toLowerCase()}
+                    </span>
                   </div>
                   <div className="d-flex mb-1">
                     <i
@@ -85,7 +89,7 @@ this.props.onUpdateHandler(this.state.users);
                 </div>
                 {this.state.user === user.Email && this.state.isedit ? (
                   <EditForm
-                    user={this.state.isedit?this.state.users:user}
+                    user={this.state.isedit ? this.state.users : user}
                     onChangeHandler={this.on_EditChange_Handler}
                     onSaveHandler={this.on_EditSave_Handler}
                   />
@@ -117,13 +121,15 @@ this.props.onUpdateHandler(this.state.users);
 
 class CardBodyData extends React.Component {
   render() {
-    var user = this.props.user;    
+    var user = this.props.user;
     return (
       <>
         <p className="card-text">{user.Email}</p>
         <p className="card-text">{user.MobileNumber}</p>
         <p className="card-text">{user.Password}</p>
-        <p className="card-text">{new Date(user.DateOfBirth).toLocaleDateString()}</p>
+        <p className="card-text">
+          {new Date(user.DateOfBirth).toLocaleDateString()}
+        </p>
       </>
     );
   }
@@ -132,13 +138,14 @@ class CardBodyData extends React.Component {
 class EditForm extends React.Component {
   constructor(props) {
     super(props);
-  }  
+    this.state = {
+      isSaving: false,
+    };
+  }
 
   render() {
     var user = this.props.user;
-    console.log("Edit Form")
-    console.log(this.props)
-    var dob=new Date(user.DateOfBirth);
+    var dob = new Date(user.DateOfBirth);
     return (
       <>
         <form onSubmit={this.props.onSaveHandler}>
@@ -146,7 +153,7 @@ class EditForm extends React.Component {
             <lable className="col-sm-3 col-form-label" htmlFor="username">
               Name
             </lable>
-            <div className=" form-group col-sm-9">
+            <div className="form-group col-sm-9">
               <input
                 type="text"
                 name="FirstName"
@@ -195,10 +202,7 @@ class EditForm extends React.Component {
             </div>
           </div>
           <div className="form-group row">
-            <lable
-              className="col-sm-3 col-form-label-sm"
-              htmlFor="DateOfBirth"
-            >
+            <lable className="col-sm-3 col-form-label-sm" htmlFor="DateOfBirth">
               DOB
             </lable>
             <div className="col-sm-9">
@@ -226,18 +230,29 @@ class EditForm extends React.Component {
             </div>
           </div>
           <div className="form-group mt-1">
-            <button type="submit" className="btn-sm w-25 float-end btn-info">
+            <button
+              type="submit"
+              onClick={(e) => {
+                this.setState({ isSaving: !this.state.isSaving });
+              }}
+              className="btn-sm w-25 float-end btn-info"
+            >
               Save
             </button>
           </div>
         </form>
+        <div className={`${this.state.isSaving?'d-block':'d-none'} justify-content-center align-items-center top-0 start-0 position-absolute w-100 h-100`}>
+          <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
       </>
     );
   }
 }
 
-const actions={  
-    update : userActions.updateUser,
-}
+const actions = {
+  update: userActions.updateUser,
+};
 
-connect(null,actions)(UserData);
+connect(null, actions)(UserData);

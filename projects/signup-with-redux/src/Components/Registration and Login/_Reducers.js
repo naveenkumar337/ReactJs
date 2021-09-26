@@ -37,7 +37,16 @@ function register_reducer(state = initialState, {type,response,result}) {
         }
        };
     case userContraints.REGISTER_FAILED:
-      return {};
+      return {
+        state:{
+          users:[],
+          user:null,    
+          Message:{
+            Code:response.Code,
+            message:response.Message
+          }     
+        }
+      };
     default:
       return state;
   }
@@ -70,7 +79,6 @@ function login_reducer(state = initialState, {type,response,result}) {
 }
 
 function alert_reducer(state = initialState, {type,response,result}) {
-  debugger;
   switch (type) {
     case alertContraints.SUCESS:
       return {
@@ -105,7 +113,6 @@ function dashboard_reducer(state = initialState, {type,response,result}) {
         loading: true,
       };
     case userContraints.GET_SUCCESS:
-      console.log(result)
       return {
         ...state,        
         users: result,
