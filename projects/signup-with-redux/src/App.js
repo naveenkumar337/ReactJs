@@ -8,7 +8,7 @@ import Index from "./Components/Registration and Login/Index";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="App">
       <ErrorBoundary>
         <Index />
       </ErrorBoundary>
