@@ -36,7 +36,7 @@ class LoginForm extends Component {
         <div className="d-flex  align-items-center vh-100 justify-content-center">
           {/* <Alert/> */}
           <form className="form bg-light  col-md-4 p-5 rounded m-auto" onSubmit={this.onSubmitHandler}>
-          <div className="text-primary text-center"><p>please login as admin</p></div>
+          <div className="text-primary text-center"><p>Login As Admin</p></div>
             <div className="form-group">
               <label htmlFor="username">UserName</label>
               <input
